@@ -53,7 +53,7 @@ class BackupCommand extends BaseCommand
             // create zip archive
             if ($this->option('archive')) {
                 $zip = new \ZipArchive();
-                $zipFileName = $dbConnectionConfig['database'] . '_' . time() . '.zip';
+                $zipFileName =   $this->fileName . '.zip';
                 $zipFilePath = dirname($this->filePath) . '/' . $zipFileName;
 
                 if ($zip->open($zipFilePath, \ZipArchive::CREATE) === true) {
